@@ -2,7 +2,7 @@ import { Router} from "express";
 import { getList, uploadList } from "./handle";
 import multer from 'multer'
 
-
+//middleware using multer library to name and store the file in csvParser
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
       cb(null, 'src/csvParser/')
@@ -16,8 +16,8 @@ const storage = multer.diskStorage({
 const router = Router()
 const upload = multer({storage:storage})
 
-router.get('/get', getList)
-router.post('/', upload.single('file'), uploadList)
+router.get('/get', getList)//for the List Page
+router.post('/', upload.single('file'), uploadList)//for the file Upload Page
 
 
 
