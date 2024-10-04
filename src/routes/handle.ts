@@ -11,7 +11,7 @@ export function uploadList(request:Request, response:Response){
 
     filePath = request.file?.path
     
-    response.json(request.file)
+    response.json({result:"received"})
 }
 
 
