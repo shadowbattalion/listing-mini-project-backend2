@@ -25,6 +25,7 @@ export function getList(request:Request<{},{}, {}, QueryInterface >, response:Re
     //won't run if the list is already there and filePath is empty.
     //file path indicates that the data.csv file is available in /src/csvParser.
     //this gate is in the case where there is no data.csv for the parser to read
+    //data.csv must be available, then the filepath will be there and will pass the if gate
     if (list.length==0 && filePath){ 
             list = csvParser(filePath)        
     }
